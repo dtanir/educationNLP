@@ -1,1 +1,9 @@
-# educationNLP
+# Education NLP
+
+The team sought to leverage the increasing power of NLP models to have a big impact on the education sector. There is a growing concern with traditional education and it is oftentimes too slow moving for the current tech climate. Many governments around the world are constantly tinkering and experimenting with their respective education systems. In its current state, there is most often just a singular rigid education system for all individuals; regardless of the competencies and interests of individual students. 
+
+What we are proposing is an application that can create a more dynamic education system where the curriculum is specialized and designed for all students to succeed in their own 
+unique way.
+
+Our proof of concept is an NLP driven recommender system that recommends courses on Udemy to high school students based on their answers to a questionnaire we have established. It is a tool meant to help guide students who are unsure about what classes/programs to take and present them with opportunities they were not instinctively drawn to initially.The application is built around sentence transformers in order to convert our open text into digestible embedded vectors. This allows our model to create relationships between two different sets of textual data. In this case, the sentence transformer is all-MiniLM-L6-v2 from Hugging Face, which provides fast run times without compromising on the quality. This is particularly important in our case because we need to quickly vectorize the student’s inputs to provide a seamless user experience. The model then uses cosine similarity to measure the relationship between the user inputs and the course descriptions. Cosine similarity is very commonly used in recommender systems because 
+it is scale invariant, robust, and effective for sparse data. Finally, in order to evaluate the effectiveness of the model, the team benchmarked its performance against a random recommender using NDCG as our scoring metric and the results were overwhelmingly positive - outperforming the benchmark by double the prediction power (NDCG@5 - 0.51 vs 0.256).
